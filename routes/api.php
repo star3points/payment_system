@@ -32,6 +32,7 @@ Route::group([
     'prefix' => 'transaction'
 ], function () {
     Route::get('index', 'index');
-    Route::post('cancel', 'cancel');
     Route::post('create', 'create');
+    Route::post('handle', 'handle');
+    Route::post('cancel', 'cancel');
 });

@@ -9,6 +9,7 @@ use App\Http\Requests\Transaction\TransactionCreate;
 use App\Http\Requests\Transaction\TransactionHandle;
 use App\Http\Requests\Transaction\TransactionIndex;
 use App\Http\Resources\TransactionResource;
+use App\Models\Balance;
 use App\Models\Transaction;
 use App\Services\TransactionService;
 use App\ValueObjects\Money;

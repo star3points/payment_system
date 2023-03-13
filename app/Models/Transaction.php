@@ -40,6 +40,6 @@ class Transaction extends Model
 
     public function balance(): BelongsTo
     {
-        return $this->belongsTo(Transaction::class);
+        return $this->belongsTo(Balance::class);
     }
 }

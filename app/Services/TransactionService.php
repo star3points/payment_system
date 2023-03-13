@@ -46,7 +46,7 @@ class TransactionService
     {
         if ($transaction->status === TransactionStatus::Processing->value) {
             DB::transaction(function () use ($transaction) {
-                $balance = $transaction->balance();
+                $balance = $transaction->balance;
                 $type = TransactionType::tryFrom($transaction->type);
                 $balance->amount = match ($type) {
                     TransactionType::Replenishment => $balance->amount + $transaction->amount,
