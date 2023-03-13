@@ -22,7 +22,12 @@ class BalanceResource extends JsonResource
             'amount_cents' => $this->amount,
             'currency' => $this->currency,
             'formatted' => Money::createFromInt($this->amount, $this->currency)->format(),
-            'transactions' => $this->whenLoaded('transactions', $this->transactions)
+            'transactions' => $this->whenLoaded(
+                'transactions',
+                function () {
+                    return TransactionResource::collection($this->transactions);
+                }
+            )
         ];
     }
 }

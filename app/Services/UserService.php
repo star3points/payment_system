@@ -14,7 +14,7 @@ class UserService
 {
     public function register(UserDTO $user)
     {
-        return DB::transaction(function () use ($user) {
+        DB::transaction(function () use ($user) {
             $userModel = User::create([
                 'name' => $user->name,
                 'phone' => $user->phone,

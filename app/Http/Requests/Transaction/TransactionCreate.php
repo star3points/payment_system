@@ -4,6 +4,7 @@ namespace App\Http\Requests\Transaction;
 
 use App\Enums\Currency;
 use App\Enums\TransactionType;
+use App\Rules\UserNotBlocked;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Validation\Rules\Enum;
@@ -34,12 +35,14 @@ class TransactionCreate extends FormRequest
             'user_id' => [
                 'required_without:phone',
                 'prohibited_unless:phone,null',
-                'exists:App\Models\User,id'
+                'exists:App\Models\User,id',
+                new UserNotBlocked()
             ],
             'phone' => [
                 'required_without:user_id',
                 'prohibited_unless:user_id,null',
-                'exists:App\Models\User,phone'
+                'exists:App\Models\User,phone',
+                new UserNotBlocked()
             ],
             'type' => ['required', new Enum(TransactionType::class)],
             'amount_cents' => 'required|integer|min:0|max:10000000',

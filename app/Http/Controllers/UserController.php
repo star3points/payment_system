@@ -22,10 +22,9 @@ class UserController extends Controller
         return UserResource::collection(User::with('balance')->paginate(10));
     }
 
-    public function register(UserRegister $request): JsonResource
+    public function register(UserRegister $request): void
     {
-        $user = app(UserService::class)->register($request->toDTO());
-        return new UserResource($user);
+        app(UserService::class)->register($request->toDTO());
     }
 
     public function setStatus(UserSetStatus $request): void
