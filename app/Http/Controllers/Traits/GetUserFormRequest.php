@@ -13,10 +13,13 @@ trait GetUserFormRequest
     {
         $userId = $request->validated('user_id');
         $phone = $request->validated('phone');
+        $email = $request->validated('mail');
         return User::when($userId, function ($q, $userId) {
             $q->where('id', $userId);
         })->when($phone, function ($q, $phone) {
             $q->where('phone', $phone);
+        })->when($email, function ($q, $email) {
+            $q->where('email', $email);
         })->first();
     }
 }

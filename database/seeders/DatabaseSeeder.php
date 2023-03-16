@@ -15,15 +15,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        \App\Models\User::factory()->has(
+            Balance::factory()->has(
+                Transaction::factory(5)
+            )
+        )->create([
+            'name' => 'User User',
+            'email' => 'mail@mail.com'
+        ]);
+
         User::factory(100)->has(
             Balance::factory()->has(
                 Transaction::factory(5)
             )
         )->create();
-
-        // \App\Models\UserResource::factory()->create([
-        //     'name' => 'Test UserResource',
-        //     'email' => 'test@example.com',
-        // ]);
     }
 }

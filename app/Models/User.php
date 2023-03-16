@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Tymon\JWTAuth\Contracts\JWTSubject;
 
 /**
  * App\Models\UserResource
@@ -32,11 +33,21 @@ use Laravel\Sanctum\HasApiTokens;
  * @method static \Illuminate\Database\Eloquent\Builder|User whereUpdatedAt($value)
  * @mixin \Eloquent
  */
-class User extends Model //extends Authenticatable
+class User extends Authenticatable implements JWTSubject
 {
     use HasFactory;
 
 //    use HasApiTokens, Notifiable;
+
+    /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array<int, string>
+     */
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
 
     /**
      * The attributes that are mass assignable.
@@ -47,8 +58,8 @@ class User extends Model //extends Authenticatable
         'name',
         'phone',
         'status',
-//        'email',
-//        'password',
+        'email',
+        'password',
     ];
 
     public function balance(): HasOne
@@ -56,22 +67,13 @@ class User extends Model //extends Authenticatable
         return $this->hasOne(Balance::class);
     }
 
-//    /**
-//     * The attributes that should be hidden for serialization.
-//     *
-//     * @var array<int, string>
-//     */
-//    protected $hidden = [
-//        'password',
-//        'remember_token',
-//    ];
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
 
-//    /**
-//     * The attributes that should be cast.
-//     *
-//     * @var array<string, string>
-//     */
-//    protected $casts = [
-//        'email_verified_at' => 'datetime',
-//    ];
+    public function getJWTCustomClaims()
+    {
+        return [];
+    }
 }
