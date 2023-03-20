@@ -3,14 +3,16 @@
 
 namespace PHPSTORM_META {
 
-   /**
-    * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    *
-    * @author Barry vd. Heuvel <barryvdh@gmail.com>
-    * @see https://github.com/barryvdh/laravel-ide-helper
-    */
-    override(new \Illuminate\Contracts\Container\Container, map([
-        '' => '@',
+    /**
+     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
+     *
+     * @author Barry vd. Heuvel <barryvdh@gmail.com>
+     * @see https://github.com/barryvdh/laravel-ide-helper
+     */
+    override(
+        new \Illuminate\Contracts\Container\Container,
+        map([
+            '' => '@',
             'Illuminate\Auth\Console\ClearResetsCommand' => \Illuminate\Auth\Console\ClearResetsCommand::class,
             'Illuminate\Auth\Middleware\RequirePassword' => \Illuminate\Auth\Middleware\RequirePassword::class,
             'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
@@ -198,12 +200,15 @@ namespace PHPSTORM_META {
             'translator' => \Illuminate\Translation\Translator::class,
             'url' => \Illuminate\Routing\UrlGenerator::class,
             'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
-            'view' => \Illuminate\View\Factory::class,
-            'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
-            'view.finder' => \Illuminate\View\FileViewFinder::class,
-        ]));
-    override(\Illuminate\Container\Container::makeWith(0), map([
-        '' => '@',
+            'views' => \Illuminate\View\Factory::class,
+            'views.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
+            'views.finder' => \Illuminate\View\FileViewFinder::class,
+        ])
+    );
+    override(
+        \Illuminate\Container\Container::makeWith(0),
+        map([
+            '' => '@',
             'Illuminate\Auth\Console\ClearResetsCommand' => \Illuminate\Auth\Console\ClearResetsCommand::class,
             'Illuminate\Auth\Middleware\RequirePassword' => \Illuminate\Auth\Middleware\RequirePassword::class,
             'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
@@ -391,12 +396,15 @@ namespace PHPSTORM_META {
             'translator' => \Illuminate\Translation\Translator::class,
             'url' => \Illuminate\Routing\UrlGenerator::class,
             'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
-            'view' => \Illuminate\View\Factory::class,
-            'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
-            'view.finder' => \Illuminate\View\FileViewFinder::class,
-        ]));
-    override(\Illuminate\Contracts\Container\Container::get(0), map([
-        '' => '@',
+            'views' => \Illuminate\View\Factory::class,
+            'views.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
+            'views.finder' => \Illuminate\View\FileViewFinder::class,
+        ])
+    );
+    override(
+        \Illuminate\Contracts\Container\Container::get(0),
+        map([
+            '' => '@',
             'Illuminate\Auth\Console\ClearResetsCommand' => \Illuminate\Auth\Console\ClearResetsCommand::class,
             'Illuminate\Auth\Middleware\RequirePassword' => \Illuminate\Auth\Middleware\RequirePassword::class,
             'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
@@ -584,12 +592,15 @@ namespace PHPSTORM_META {
             'translator' => \Illuminate\Translation\Translator::class,
             'url' => \Illuminate\Routing\UrlGenerator::class,
             'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
-            'view' => \Illuminate\View\Factory::class,
-            'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
-            'view.finder' => \Illuminate\View\FileViewFinder::class,
-        ]));
-    override(\Illuminate\Contracts\Container\Container::make(0), map([
-        '' => '@',
+            'views' => \Illuminate\View\Factory::class,
+            'views.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
+            'views.finder' => \Illuminate\View\FileViewFinder::class,
+        ])
+    );
+    override(
+        \Illuminate\Contracts\Container\Container::make(0),
+        map([
+            '' => '@',
             'Illuminate\Auth\Console\ClearResetsCommand' => \Illuminate\Auth\Console\ClearResetsCommand::class,
             'Illuminate\Auth\Middleware\RequirePassword' => \Illuminate\Auth\Middleware\RequirePassword::class,
             'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
@@ -777,12 +788,15 @@ namespace PHPSTORM_META {
             'translator' => \Illuminate\Translation\Translator::class,
             'url' => \Illuminate\Routing\UrlGenerator::class,
             'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
-            'view' => \Illuminate\View\Factory::class,
-            'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
-            'view.finder' => \Illuminate\View\FileViewFinder::class,
-        ]));
-    override(\Illuminate\Contracts\Container\Container::makeWith(0), map([
-        '' => '@',
+            'views' => \Illuminate\View\Factory::class,
+            'views.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
+            'views.finder' => \Illuminate\View\FileViewFinder::class,
+        ])
+    );
+    override(
+        \Illuminate\Contracts\Container\Container::makeWith(0),
+        map([
+            '' => '@',
             'Illuminate\Auth\Console\ClearResetsCommand' => \Illuminate\Auth\Console\ClearResetsCommand::class,
             'Illuminate\Auth\Middleware\RequirePassword' => \Illuminate\Auth\Middleware\RequirePassword::class,
             'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
@@ -970,12 +984,15 @@ namespace PHPSTORM_META {
             'translator' => \Illuminate\Translation\Translator::class,
             'url' => \Illuminate\Routing\UrlGenerator::class,
             'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
-            'view' => \Illuminate\View\Factory::class,
-            'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
-            'view.finder' => \Illuminate\View\FileViewFinder::class,
-        ]));
-    override(\App::get(0), map([
-        '' => '@',
+            'views' => \Illuminate\View\Factory::class,
+            'views.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
+            'views.finder' => \Illuminate\View\FileViewFinder::class,
+        ])
+    );
+    override(
+        \App::get(0),
+        map([
+            '' => '@',
             'Illuminate\Auth\Console\ClearResetsCommand' => \Illuminate\Auth\Console\ClearResetsCommand::class,
             'Illuminate\Auth\Middleware\RequirePassword' => \Illuminate\Auth\Middleware\RequirePassword::class,
             'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
@@ -1163,12 +1180,15 @@ namespace PHPSTORM_META {
             'translator' => \Illuminate\Translation\Translator::class,
             'url' => \Illuminate\Routing\UrlGenerator::class,
             'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
-            'view' => \Illuminate\View\Factory::class,
-            'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
-            'view.finder' => \Illuminate\View\FileViewFinder::class,
-        ]));
-    override(\App::make(0), map([
-        '' => '@',
+            'views' => \Illuminate\View\Factory::class,
+            'views.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
+            'views.finder' => \Illuminate\View\FileViewFinder::class,
+        ])
+    );
+    override(
+        \App::make(0),
+        map([
+            '' => '@',
             'Illuminate\Auth\Console\ClearResetsCommand' => \Illuminate\Auth\Console\ClearResetsCommand::class,
             'Illuminate\Auth\Middleware\RequirePassword' => \Illuminate\Auth\Middleware\RequirePassword::class,
             'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
@@ -1356,12 +1376,15 @@ namespace PHPSTORM_META {
             'translator' => \Illuminate\Translation\Translator::class,
             'url' => \Illuminate\Routing\UrlGenerator::class,
             'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
-            'view' => \Illuminate\View\Factory::class,
-            'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
-            'view.finder' => \Illuminate\View\FileViewFinder::class,
-        ]));
-    override(\App::makeWith(0), map([
-        '' => '@',
+            'views' => \Illuminate\View\Factory::class,
+            'views.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
+            'views.finder' => \Illuminate\View\FileViewFinder::class,
+        ])
+    );
+    override(
+        \App::makeWith(0),
+        map([
+            '' => '@',
             'Illuminate\Auth\Console\ClearResetsCommand' => \Illuminate\Auth\Console\ClearResetsCommand::class,
             'Illuminate\Auth\Middleware\RequirePassword' => \Illuminate\Auth\Middleware\RequirePassword::class,
             'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
@@ -1549,12 +1572,15 @@ namespace PHPSTORM_META {
             'translator' => \Illuminate\Translation\Translator::class,
             'url' => \Illuminate\Routing\UrlGenerator::class,
             'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
-            'view' => \Illuminate\View\Factory::class,
-            'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
-            'view.finder' => \Illuminate\View\FileViewFinder::class,
-        ]));
-    override(\app(0), map([
-        '' => '@',
+            'views' => \Illuminate\View\Factory::class,
+            'views.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
+            'views.finder' => \Illuminate\View\FileViewFinder::class,
+        ])
+    );
+    override(
+        \app(0),
+        map([
+            '' => '@',
             'Illuminate\Auth\Console\ClearResetsCommand' => \Illuminate\Auth\Console\ClearResetsCommand::class,
             'Illuminate\Auth\Middleware\RequirePassword' => \Illuminate\Auth\Middleware\RequirePassword::class,
             'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
@@ -1742,12 +1768,15 @@ namespace PHPSTORM_META {
             'translator' => \Illuminate\Translation\Translator::class,
             'url' => \Illuminate\Routing\UrlGenerator::class,
             'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
-            'view' => \Illuminate\View\Factory::class,
-            'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
-            'view.finder' => \Illuminate\View\FileViewFinder::class,
-        ]));
-    override(\resolve(0), map([
-        '' => '@',
+            'views' => \Illuminate\View\Factory::class,
+            'views.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
+            'views.finder' => \Illuminate\View\FileViewFinder::class,
+        ])
+    );
+    override(
+        \resolve(0),
+        map([
+            '' => '@',
             'Illuminate\Auth\Console\ClearResetsCommand' => \Illuminate\Auth\Console\ClearResetsCommand::class,
             'Illuminate\Auth\Middleware\RequirePassword' => \Illuminate\Auth\Middleware\RequirePassword::class,
             'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
@@ -1935,12 +1964,15 @@ namespace PHPSTORM_META {
             'translator' => \Illuminate\Translation\Translator::class,
             'url' => \Illuminate\Routing\UrlGenerator::class,
             'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
-            'view' => \Illuminate\View\Factory::class,
-            'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
-            'view.finder' => \Illuminate\View\FileViewFinder::class,
-        ]));
-    override(\Psr\Container\ContainerInterface::get(0), map([
-        '' => '@',
+            'views' => \Illuminate\View\Factory::class,
+            'views.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
+            'views.finder' => \Illuminate\View\FileViewFinder::class,
+        ])
+    );
+    override(
+        \Psr\Container\ContainerInterface::get(0),
+        map([
+            '' => '@',
             'Illuminate\Auth\Console\ClearResetsCommand' => \Illuminate\Auth\Console\ClearResetsCommand::class,
             'Illuminate\Auth\Middleware\RequirePassword' => \Illuminate\Auth\Middleware\RequirePassword::class,
             'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
@@ -2128,16 +2160,26 @@ namespace PHPSTORM_META {
             'translator' => \Illuminate\Translation\Translator::class,
             'url' => \Illuminate\Routing\UrlGenerator::class,
             'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
-            'view' => \Illuminate\View\Factory::class,
-            'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
-            'view.finder' => \Illuminate\View\FileViewFinder::class,
-        ]));
+            'views' => \Illuminate\View\Factory::class,
+            'views.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
+            'views.finder' => \Illuminate\View\FileViewFinder::class,
+        ])
+    );
 
 
-    override(\Illuminate\Foundation\Testing\Concerns\InteractsWithContainer::mock(0), map(["" => "@&\Mockery\MockInterface"]));
-    override(\Illuminate\Foundation\Testing\Concerns\InteractsWithContainer::partialMock(0), map(["" => "@&\Mockery\MockInterface"]));
+    override(
+        \Illuminate\Foundation\Testing\Concerns\InteractsWithContainer::mock(0),
+        map(["" => "@&\Mockery\MockInterface"])
+    );
+    override(
+        \Illuminate\Foundation\Testing\Concerns\InteractsWithContainer::partialMock(0),
+        map(["" => "@&\Mockery\MockInterface"])
+    );
     override(\Illuminate\Foundation\Testing\Concerns\InteractsWithContainer::instance(0), type(1));
-    override(\Illuminate\Foundation\Testing\Concerns\InteractsWithContainer::spy(0), map(["" => "@&\Mockery\MockInterface"]));
+    override(
+        \Illuminate\Foundation\Testing\Concerns\InteractsWithContainer::spy(0),
+        map(["" => "@&\Mockery\MockInterface"])
+    );
     override(\Illuminate\Support\Arr::add(0), type(0));
     override(\Illuminate\Support\Arr::except(0), type(0));
     override(\Illuminate\Support\Arr::first(0), elementType(0));
@@ -2168,5 +2210,4 @@ namespace PHPSTORM_META {
     override(\with(0), type(0));
     override(\tap(0), type(0));
     override(\optional(0), type(0));
-
 }

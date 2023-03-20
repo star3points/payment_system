@@ -15,36 +15,35 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//    return $request->user();
-//});
-
 Route::group([
-    'middleware' => 'api',
     'controller' => AuthController::class,
     'prefix' => 'auth'
-], function ($router) {
+], function () {
     Route::post('login', 'login');
     Route::post('logout', 'logout');
     Route::post('refresh', 'refresh');
-    Route::post('me', 'me');
+    Route::group(['middleware' => 'jwt.auth'], function () {
+        Route::post('me', 'me');
+    });
 });
 
-Route::group([
-    'controller' => \App\Http\Controllers\UserController::class,
-    'prefix' => 'user'
-], function () {
-    Route::get('index', 'index');
-    Route::post('register', 'register');
-    Route::post('status', 'setStatus');
-});
+Route::group(['middleware' => 'jwt.auth'], function () {
+    Route::group([
+        'controller' => \App\Http\Controllers\UserController::class,
+        'prefix' => 'user'
+    ], function () {
+        Route::get('index', 'index');
+        Route::post('register', 'register');
+        Route::post('status', 'setStatus');
+    });
 
-Route::group([
-    'controller' => \App\Http\Controllers\TransactionController::class,
-    'prefix' => 'transaction'
-], function () {
-    Route::get('index', 'index');
-    Route::post('create', 'create');
-    Route::post('handle', 'handle');
-    Route::post('cancel', 'cancel');
+    Route::group([
+        'controller' => \App\Http\Controllers\TransactionController::class,
+        'prefix' => 'transaction'
+    ], function () {
+        Route::get('index', 'index');
+        Route::post('create', 'create');
+        Route::post('handle', 'handle');
+        Route::post('cancel', 'cancel');
+    });
 });
